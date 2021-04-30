@@ -102,14 +102,13 @@ end
 local PrevEnergyTimeToMaxPredicted, PrevEnergyPredicted = 0, 0
 local function EnergyTimeToMaxStable ()
   local EnergyTimeToMaxPredicted = Player:EnergyTimeToMaxPredicted()
-  if mathabs(PrevEnergyTimeToMaxPredicted - EnergyTimeToMaxPredicted) > 1 then
-    PrevEnergyTimeToMaxPredicted = EnergyTimeToMaxPredicted
-  end
-  return PrevEnergyTimeToMaxPredicted
-end
-local function EnergyPredictedStable ()
-  local EnergyPredicted = Player:EnergyPredicted()
-  if mathabs(PrevEnergyPredicted - EnergyPredicted) > 9 then
+ if covenantId == NightFae then
+		MaxDps:GlowCooldown(OL.Sepsis, cooldown[OL.Sepsis].ready);
+	elseif covenantId == Necrolord then
+		MaxDps:GlowCooldown(OL.SerratedBoneSpear, cooldown[OL.SerratedBoneSpear].ready);
+	elseif covenantId == Kyrian then
+		MaxDps:GlowCooldown(OL.EchoingReprimand, cooldown[OL.EchoingReprimand].ready);
+	end
     PrevEnergyPredicted = EnergyPredicted
   end
   return PrevEnergyPredicted
