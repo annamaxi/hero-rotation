@@ -102,13 +102,7 @@ end
 local PrevEnergyTimeToMaxPredicted, PrevEnergyPredicted = 0, 0
 local function EnergyTimeToMaxStable ()
   local EnergyTimeToMaxPredicted = Player:EnergyTimeToMaxPredicted()
-  if mathabs(PrevEnergyTimeToMaxPredicted - EnergyTimeToMaxPredicted) > 1 then
-    PrevEnergyTimeToMaxPredicted = EnergyTimeToMaxPredicted
-  end
-  return PrevEnergyTimeToMaxPredicted
-end
-local function EnergyPredictedStable ()
-  local EnergyPredicted = Player:EnergyPredicted()
+ 
   if mathabs(PrevEnergyPredicted - EnergyPredicted) > 9 then
     PrevEnergyPredicted = EnergyPredicted
   end
