@@ -102,13 +102,13 @@ end
 local PrevEnergyTimeToMaxPredicted, PrevEnergyPredicted = 0, 0
 local function EnergyTimeToMaxStable ()
   local EnergyTimeToMaxPredicted = Player:EnergyTimeToMaxPredicted()
-  if mathabs(PrevEnergyTimeToMaxPredicted - EnergyTimeToMaxPredicted) > 1 then
-    PrevEnergyTimeToMaxPredicted = EnergyTimeToMaxPredicted
-  end
-  return PrevEnergyTimeToMaxPredicted
-end
-local function EnergyPredictedStable ()
-  local EnergyPredicted = Player:EnergyPredicted()
+ -- if covenantId == NightFae then
+-- MaxDps:GlowCooldown(FR.AncientAftershock, cooldown[FR.AncientAftershock].ready);
+-- elseif covenantId == Necrolord then
+-- MaxDps:GlowCooldown(FR.ConquerorsBanner, cooldown[FR.ConquerorsBanner].ready);
+-- elseif covenantId == Kyrian then
+-- MaxDps:GlowCooldown(FR.SpearOfBastion, cooldown[FR.SpearOfBastion].ready);
+-- end
   if mathabs(PrevEnergyPredicted - EnergyPredicted) > 9 then
     PrevEnergyPredicted = EnergyPredicted
   end
